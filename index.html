@@ -150,6 +150,88 @@ view address model =
 				</section>
 
 				<section>
+					You can't ignore errors. You know. Like everybody.
+				</section>
+
+				<section>
+					<pre><code data-trim>
+-- MODEL
+
+type alias Model = Int
+
+-- UPDATE
+
+type Action
+  = GetDataFromServer
+  | UpdateDataFromServer
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+GetDataFromServer ->
+  ( model, Http.get "https://example.com/api/data" |> Task.map UpdateDataFromServer )
+
+UpdateDataFromServer result ->
+  case result of
+    Ok val ->
+      ( { model <- val } , Effects.none )
+    Err msg -> -- We cannot ignore it!
+      ( model , Effects.none )
+
+					</code></pre>
+				</section>
+
+				<section>
+					It encourages us to be better developer.
+				</section>
+
+				<section>
+					<pre><code data-trim>
+-- MODEL
+
+type Status
+  = Init
+  | Fetching
+  | Fetched
+  | HttpError Http.Error
+
+type alias Model =
+  { counter : Int
+	, status : Status
+	}
+
+-- UPDATE
+
+type Action
+  = GetDataFromServer
+  | UpdateDataFromServer
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+GetDataFromServer ->
+  ( { model | status <- Fetching }
+	, Http.get "https://example.com/api/data" |> Task.map UpdateDataFromServer
+	)
+
+UpdateDataFromServer result ->
+  case result of
+    Ok val ->
+      ( { model | status <- Fetched, counter <- val }
+			, Effects.none
+			)
+
+    Err msg ->
+      ( { model | status <- HttpError msg }
+			, Effects.none
+			)
+
+					</code></pre>
+				</section>
+
+				<section>
 	        <h2>Elm Hedley - Headless Drupal</h2>
 					<small>https://github.com/amitaibu/elm-hedley</small>
 					<div>
