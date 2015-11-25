@@ -96,6 +96,7 @@
 	      </section>
 
 				<section>
+					<h2>Counter Example</h2>
 				  <img src="https://cloud.githubusercontent.com/assets/125707/9739824/2fcc8cd0-565a-11e5-8024-0d01200773cd.jpg" />
 	      </section>
 
@@ -136,7 +137,7 @@ view : Signal.Address Action -> Model -> Html
 view address model =
   div []
     [ button [ onClick address Decrement ] [ text "-" ]
-    , div [ countStyle ] [ text (toString model) ]
+    , div [] [ text (toString model) ]
     , button [ onClick address Increment ] [ text "+" ]
     ]
 					</code></pre>
@@ -182,19 +183,53 @@ between these two types:
 				<section data-background-video="http://zippy.gfycat.com/RegularWelltodoEider.webm" data-background-video-loop>
 				</section>
 
-				<section>
-	        <h2>Yeoman Generator</h2>
-					<small>https://github.com/Gizra/generator-elmlang</small>
-					<div>
-						<ul>
-							<li>Gulp</li>
-							<li>browserSync</li>
-							<li>Auto-compile</li>
-							<li>Sass</li>
-							<li>Bundle and Deploy to GH-pages</li>
-						</ul>
+				<section data-background="https://avatars0.githubusercontent.com/u/1714870">
+					<div style="background-color: black; opacity: 0.85; padding: 20px;">
+		        <h2>Yeoman Generator</h2>
+						<small>https://github.com/Gizra/generator-elmlang</small>
+						<div>
+							<ul>
+								<li>Gulp</li>
+								<li>browserSync</li>
+								<li>Auto-compile</li>
+								<li>Sass</li>
+								<li>Bundle and Deploy to GH-pages</li>
+							</ul>
+						</div>
 					</div>
 	      </section>
+
+				<section>
+					<h2>Unit tests</h2>
+
+				</section>
+
+				<section>
+					<small>Counter.elm</small>
+					<pre><code data-trim>
+update : Action -> Model -> Model
+update action model =
+  case action of
+    Increment -> model + 1
+    Decrement -> model - 1
+					</code></pre>
+	      </section>
+
+				<section>
+					<pre><code data-trim>
+incrementActionSuite : Test
+incrementActionSuite =
+  suite "Incerment action"
+    [ test "negative count" (assertEqual 0 (updateCounter Counter.Increment -1))
+    , test "zero count" (assertEqual 1 (updateCounter Counter.Increment 0))
+    , test "positive count" (assertEqual 2 (updateCounter Counter.Increment 1))
+    ]
+
+updateCounter : Counter.Action -> Int -> Counter.Model
+updateCounter action initialModel =
+  fst <| Counter.update action initialModel
+					</code></pre>
+				</section>
 
 			</div> <!-- end of slides -->
 
