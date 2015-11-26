@@ -157,7 +157,6 @@ view address model =
         </section>
 
         <section>
-          <h2>Elm Hedley</h2>
           <small>https://github.com/amitaibu/elm-hedley</small>
 					<div>
 						<img src="https://cloud.githubusercontent.com/assets/125707/11417413/ae2f2d96-941f-11e5-8482-d68a936ad083.jpg" />
@@ -169,6 +168,23 @@ view address model =
 
         <section data-background-video="http://zippy.gfycat.com/RegularWelltodoEider.webm" data-background-video-loop>
         </section>
+
+				<section>
+					Main.elm
+					<pre style="width: 100%;"><code data-trim>
+port dropzoneUploadedFile : Signal (Maybe Int)
+					</code></pre>
+
+					interop.js
+					<pre style="width: 100%;"><code data-trim>
+dropZone = new Dropzone();
+
+dropZone.on('complete', function(response) {
+  var id = parseInt(response.id);
+  elmApp.ports.dropzoneUploadedFile.send(id);
+});
+					</code></pre>
+				</section>
 
         <section data-background="https://cloud.githubusercontent.com/assets/125707/11408379/4deb2934-93c1-11e5-817d-43d035182fea.jpg">
           <div style="background-color: black; opacity: 0.85; padding: 20px;">
