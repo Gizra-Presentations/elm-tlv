@@ -48,8 +48,35 @@
 						<h1>אלמ תל-אביב</h1>
 						<small>מפגש ראשון</small>
 					</div>
-
+					<aside class="notes">
+						קהל ההמונים באיצטדיון קיסריה
+			    </aside>
         </section>
+
+				<section>
+          <div style="font-family: Abril Fatface; color: #e27058; font-size: 166px;">
+            gizra
+          </div>
+          <small style="margin-top: 20px;">
+            Amitai Burstein (@amitaibu)
+          </small>
+
+					<aside class="notes">
+			        קרדביליות
+			    </aside>
+        </section>
+
+
+				<section data-background="https://cloud.githubusercontent.com/assets/125707/11408236/87633f9a-93c0-11e5-9b8a-e7606b703331.jpg">
+					<h2 style="background-color: black; opacity: 0.75; padding: 20px;">
+						What's wrong with Angular? Why not React?
+					</h2>
+
+					<aside class="notes">
+			        התחלה קלה, אבל מסתבך במהירות.
+							ריאקט הוא גם בגאווהסקריפט. ממושמעים.
+			    </aside>
+				</section>
 
         <section data-background="https://cloud.githubusercontent.com/assets/125707/11417279/6ad89eca-941e-11e5-90af-6c8e4431eb5c.jpg">
           <div style="background-color: black; opacity: 0.75; padding: 20px;">
@@ -63,31 +90,23 @@
           <div>RPF (Reactive Functional Programming)</div>
           <div>Haskell</div>
           <div>Inferred Types</div>
+
+					<aside class="notes">
+מיד נתקלים במילים גדולות. בוא נעזוב את זה.
+			    </aside>
         </section>
-
-        <section>
-          <div style="font-family: Abril Fatface; color: #e27058; font-size: 166px;">
-            gizra
-          </div>
-          <small style="margin-top: 20px;">
-            Amitai Burstein (@amitaibu)
-          </small>
-        </section>
-
-        <section data-background-video="http://zippy.gfycat.com/ClassicSplendidDikkops.webm" data-background-video-loop>
-        </section>
-
-				<section data-background="https://cloud.githubusercontent.com/assets/125707/11408236/87633f9a-93c0-11e5-9b8a-e7606b703331.jpg">
-					<h2 style="background-color: black; opacity: 0.75; padding: 20px;">What's wrong with Angular? Why not React?</h2>
-				</section>
-
-
 
         <section>
           <div>
             <h3>Principle 1: Single source of truth</h3>
             <small>The state of your whole application is stored in a record tree</small>
           </div>
+
+					<aside class="notes">
+אם עבדתם עם אנגולר ואם נכוותם מיד תתחילו להנהן.
+עושים אביוז לראוטר
+האופי האסינכורני של גווהסקריפט
+			    </aside>
         </section>
 
         <section>
@@ -95,9 +114,17 @@
             <h3>Principle 2: State is read-only</h3>
             <small>The only way to mutate the state is to emit an action describing what happened</small>
           </div>
+
+					<aside class="notes">
+הדרך היפה ללהגיד טו ויי, מה עשית מה
+next: time travel
+			    </aside>
         </section>
 
         <section data-background-video="http://zippy.gfycat.com/AdeptLargeHousefly.webm" data-background-video-loop>
+					<aside class="notes">
+						time travel
+			    </aside>
         </section>
 
         <section>
@@ -140,6 +167,22 @@ view address model =
     , button [ onClick address Increment ] [ text "+" ]
     ]
           </code></pre>
+
+					<aside class="notes">
+						<div>
+							elm architecture
+						</div>
+						<div>
+							מה אפשר לעשות באפליקציה שלכם?
+						</div>
+						<div>
+							action is implemtation details
+						</div>
+						<div>
+							תגית של באטן פתוחה, תגית של דיו פתוחה							
+						</div>
+
+			    </aside>
         </section>
 
         <section data-background="https://cloud.githubusercontent.com/assets/125707/11406621/fdfa8e38-93b6-11e5-8c6d-49ddf1a6abc6.jpg">
@@ -161,12 +204,19 @@ view address model =
 					<div>
 						<img src="https://cloud.githubusercontent.com/assets/125707/11417413/ae2f2d96-941f-11e5-8482-d68a936ad083.jpg" />
 					</div>
+
+					<aside class="notes">
+						חלק מתהליך קבלת ההחלטה למעבר לאלמ
+			    </aside>
         </section>
 
 				<section data-background-video="http://zippy.gfycat.com/FickleTangibleAntlion.webm" data-background-video-loop>
         </section>
 
         <section data-background-video="http://zippy.gfycat.com/RegularWelltodoEider.webm" data-background-video-loop>
+					<aside class="notes">
+						next: interop
+			    </aside>
         </section>
 
 				<section>
@@ -184,6 +234,11 @@ dropZone.on('complete', function(response) {
   elmApp.ports.dropzoneUploadedFile.send(id);
 });
 					</code></pre>
+
+					<aside class="notes">
+						שומר השער.
+			    </aside>
+
 				</section>
 
         <section data-background="https://cloud.githubusercontent.com/assets/125707/11408379/4deb2934-93c1-11e5-817d-43d035182fea.jpg">
@@ -200,6 +255,11 @@ dropZone.on('complete', function(response) {
               </ul>
             </div>
           </div>
+
+					<aside class="notes">
+						התחלה מהירה של פרוייקט חדש.
+						codified knowledge base
+			    </aside>
         </section>
 
 				<section>
@@ -210,6 +270,9 @@ dropZone.on('complete', function(response) {
 					<h2 style="color: black; background-color: white; opacity: 0.75; padding: 10px;">
 						Effects
 					</h2>
+					<aside class="notes">
+						אז בוא נדבר על אפקטס.
+			    </aside>
         </section>
 
         <section>
@@ -237,6 +300,11 @@ UpdateDataFromServer result ->
       ( model , Effects.none )
 
           </code></pre>
+					<aside class="notes">
+						pure functions
+						אלמ היא קופסה שחורה
+						היא אפשר להתעלם מטעויות
+			    </aside>
         </section>
 
         <section data-background="https://cloud.githubusercontent.com/assets/125707/11408326/fdde5fc4-93c0-11e5-817b-83f79d2f312e.jpg">
@@ -293,6 +361,10 @@ UpdateDataFromServer result ->
           <h2 style="background-color: black; opacity: 0.85; padding: 20px;">
 						Unit tests
 					</h2>
+
+					<aside class="notes">
+						pure functions
+			    </aside>
         </section>
 
         <section>
@@ -321,7 +393,20 @@ update action model =
 					<h2 style="background-color: black; opacity: 0.85; padding: 20px;">
 						Headless Drupal
 					</h2>
+					<aside class="notes">
+						הערת אגב
+						ניהול משתמשים, דאטא מודלינג, הראשות, אדמין ורסטפול
+			    </aside>
 				</section>
+
+				<!-- Timewatch -->
+        <section data-background-video="http://zippy.gfycat.com/ClassicSplendidDikkops.webm" data-background-video-loop>
+        </section>
+
+				<section data-background="https://cloud.githubusercontent.com/assets/125707/11418931/eadafbe6-942c-11e5-8491-c5089318c356.jpg">
+				</section>
+
+
 
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/11408842/6abc3708-93c4-11e5-8515-bf92a59cf8ea.jpg">
 					<div style="background-color: black; opacity: 0.85; padding: 20px;">
