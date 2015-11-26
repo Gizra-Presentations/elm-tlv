@@ -51,7 +51,7 @@
 
         </section>
 
-        <section data-background="https://cloud.githubusercontent.com/assets/125707/11396817/3f2d229c-937d-11e5-96a8-ff5e61505f74.jpg">
+        <section data-background="https://cloud.githubusercontent.com/assets/125707/11417279/6ad89eca-941e-11e5-90af-6c8e4431eb5c.jpg">
           <div style="background-color: black; opacity: 0.75; padding: 20px;">
             <h2>Elm</h2>
             A different approach to webapps
@@ -215,7 +215,7 @@ GetDataFromServer ->
 UpdateDataFromServer result ->
   case result of
     Ok val ->
-      ( { model <- val } , Effects.none )
+      ( { model = val } , Effects.none )
     Err msg -> -- We cannot ignore this!
       ( model , Effects.none )
 
@@ -255,19 +255,19 @@ type Action
         <section>
           <pre style="width: 100%;"><code data-trim>
 GetDataFromServer ->
-  ( { model | status <- Fetching }
+  ( { model | status = Fetching }
   , Http.get "https://example.com/api/data" |> Task.map UpdateDataFromServer
   )
 
 UpdateDataFromServer result ->
   case result of
     Ok val ->
-      ( { model | status <- Fetched, counter <- val }
+      ( { model | status = Fetched, counter = val }
       , Effects.none
       )
 
     Err msg ->
-      ( { model | status <- HttpError msg }
+      ( { model | status = HttpError msg }
       , Effects.none
       )
 
@@ -307,7 +307,6 @@ update action model =
 						Headless Drupal
 					</h2>
 				</section>
-
 
 				<section data-background="https://cloud.githubusercontent.com/assets/125707/11408842/6abc3708-93c4-11e5-8515-bf92a59cf8ea.jpg">
 					<div style="background-color: black; opacity: 0.85; padding: 20px;">
