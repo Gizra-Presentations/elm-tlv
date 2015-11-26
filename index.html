@@ -159,9 +159,12 @@ view address model =
         <section>
           <h2>Elm Hedley</h2>
           <small>https://github.com/amitaibu/elm-hedley</small>
-          <div>
-            <iframe src="http://gfycat.com/ifr/DeterminedDetailedIndianelephant" frameborder="0" scrolling="no" width="598" height="388" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
-          </div>
+					<div>
+						<img src="https://cloud.githubusercontent.com/assets/125707/11417413/ae2f2d96-941f-11e5-8482-d68a936ad083.jpg" />
+					</div>
+        </section>
+
+				<section data-background-video="http://zippy.gfycat.com/FickleTangibleAntlion.webm" data-background-video-loop>
         </section>
 
         <section data-background-video="http://zippy.gfycat.com/RegularWelltodoEider.webm" data-background-video-loop>
@@ -196,11 +199,9 @@ view address model =
         <section>
           <pre style="width: 100%;"><code data-trim>
 -- MODEL
-
 type alias Model = Int
 
 -- UPDATE
-
 type Action
   = GetDataFromServer
   | UpdateDataFromServer
@@ -216,7 +217,7 @@ UpdateDataFromServer result ->
   case result of
     Ok val ->
       ( { model = val } , Effects.none )
-    Err msg -> -- We cannot ignore this!
+    Err msg ->
       ( model , Effects.none )
 
           </code></pre>
@@ -232,7 +233,6 @@ UpdateDataFromServer result ->
         <section>
           <pre style="width: 100%;"><code data-trim>
 -- MODEL
-
 type Status
   = Init
   | Fetching
@@ -245,7 +245,6 @@ type alias Model =
   }
 
 -- UPDATE
-
 type Action
   = GetDataFromServer
   | UpdateDataFromServer
